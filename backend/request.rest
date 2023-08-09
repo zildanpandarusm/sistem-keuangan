@@ -1,0 +1,79 @@
+GET http://localhost:5000/pendapatanterakhir
+
+###
+GET http://localhost:5000/users/fd9eaf2a-64d3-4a9f-b6cd-2605fe07b75e
+
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "nama": "Zildan Pandaru",
+    "email": "zildan@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "foto": "xtvbhjkgfdgfhvjb.png",
+    "role": "admin"
+}
+
+###
+DELETE http://localhost:5000/users/fd9eaf2a-64d3-4a9f-b6cd-2605fe07b75e
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "nama": "Zildan Pandaru",
+    "email": "zildan@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "foto": "xtvbhjkgfdgfhvjb.png",
+    "role": "admin"
+}
+
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:5000/pengeluaran
+Content-Type: application/json
+
+{
+   "tanggal": "25/08/2023",
+   "jumlah": "Rp 45.000",
+   "sumber": "Lain-lain"
+}
+
+###
+GET http://localhost:5000/pengeluaran
+
+###
+GET http://localhost:5000/pengeluaran/44630d6b-fc66-4503-ba92-bc03cca478aa
+
+###
+GET http://localhost:5000/users
+
+###
+DELETE http://localhost:5000/logout
+
+###
+PATCH http://localhost:5000/pengeluaran/44630d6b-fc66-4503-ba92-bc03cca478aa
+Content-Type: application/json
+
+{
+   "tanggal": "25/08/2023",
+   "jumlah": "Rp 245.000",
+   "sumber": "Kebutuhan kantor"
+}
+
+###
+DELETE http://localhost:5000/pengeluaran/44630d6b-fc66-4503-ba92-bc03cca478aa

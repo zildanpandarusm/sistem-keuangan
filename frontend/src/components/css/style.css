@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efefef;
+}
+
+/* Login */
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .box {
+  width: 50%;
+  max-width: 22rem;
+  height: 60%;
+  background-color: white;
+  padding: 1.3rem;
+  position: relative;
+  box-shadow: 0 0 8px rgba(61, 61, 61, 0.4);
+}
+
+.login .box h1 {
+  text-align: center;
+  background: -webkit-linear-gradient(280deg, #3aa6ff, #32ff47);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  height: 2.8rem;
+}
+
+.login .box .formInput {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.login .box .formInput label {
+  color: #555555;
+  margin-bottom: 0.3rem;
+}
+
+.login .box .formInput input {
+  height: 2.1rem;
+  padding-left: 0.3rem;
+  color: #555555;
+  border-radius: 0.5rem;
+  border: 1px solid #aaaaaa;
+}
+
+.login .box .formInput input:focus {
+  border: 3px solid #34b597;
+  outline: none;
+}
+
+.login .box .formInput button {
+  height: 2.2rem;
+  background-color: #34b597;
+  border: none;
+  margin-top: 0.7rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.login .box .formInput button:hover {
+  background-color: #0a8568;
+}
+
+.box .kotak {
+  width: 95%;
+  height: 95%;
+  background-image: linear-gradient(to bottom right, #52ffd7, #4254ff);
+  z-index: -5;
+  bottom: -3%;
+  left: -3%;
+  position: absolute;
+  box-shadow: 0 0 8px rgba(61, 61, 61, 0.4);
+}
+
+.msg {
+  color: red;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Konten */
+
+.kontenLayout {
+  min-width: calc(100vw - 18rem);
+  min-height: 27rem;
+  /* border-radius: 1rem; */
+  padding: 2rem;
+  position: absolute;
+  left: 16.5rem;
+  top: 8.8rem;
+  z-index: -1;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(41, 41, 41, 0.4);
+}
+
+.navbar {
+  height: 7.4rem;
+  width: 100%;
+  background-image: linear-gradient(to top left, #87ffe3, #519edd);
+  position: fixed;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.navbar .judul {
+  margin-left: 16.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.7rem;
+  color: white;
+}
+
+.profile {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  height: 50%;
+  width: 200px;
+  background-color: #2c91a8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 1.4rem;
+  border-bottom-left-radius: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.profile.active {
+  top: 15px;
+}
+
+.profile:hover {
+  background-color: #14748a;
+}
+
+.profile h4 {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.profile img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.navbar .logoutNavbar {
+  width: 7rem;
+  height: 2rem;
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  transition-duration: 0.3s;
+  z-index: 8;
+}
+
+.navbar .logoutNavbar.active {
+  top: 74px;
+  opacity: 1;
+  display: block;
+}
+
+.navbar .logoutNavbar button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #3027cc;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.navbar .logoutNavbar button:hover {
+  z-index: 15;
+  background-color: #070178;
+}
+
+.navbar .logoutNavbar button .icon {
+  margin-right: 0.3rem;
+}
+
+/* Sidebar */
+
+aside {
+  position: fixed;
+  width: 30%;
+  max-width: 15rem;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside .logo {
+  height: 7.4rem;
+  border-bottom: 1.4px solid #85e7d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 5px #d7d7d7;
+}
+
+aside .logo img {
+  width: 40%;
+  max-width: 7rem;
+}
+
+aside ul {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: center;
+}
+
+aside ul .menu {
+  list-style: none;
+  padding: 1.2rem 1.6rem;
+  cursor: pointer;
+}
+
+aside ul .menu:hover {
+  background-color: rgb(135, 255, 227);
+}
+
+aside ul .menu .icon {
+  color: #2e9ab2;
+  width: 1.2rem;
+}
+
+aside ul .menu:hover .icon {
+  color: #fff;
+}
+
+aside ul .menu p {
+  text-decoration: none;
+  color: #616161;
+  margin-left: 0.5rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+aside ul .menu:hover p {
+  color: #fff;
+}
+
+aside .logoutSidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+
+aside .logoutSidebar button {
+  color: white;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  font-size: 1.3rem;
+  background-color: #2e9ab2;
+  cursor: pointer;
+}
+
+aside .logoutSidebar button:hover {
+  color: white;
+  background-color: #14748a;
+}
+
+aside .logoutSidebar button .icon {
+  margin-right: 0.6rem;
+}
+
+/* Dashboard, chart */
+.dashboard h2 {
+  color: #555;
+}
+.dashboard h2 span {
+  color: #2e9ab2;
+}
+
+.dashboard p {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.dashboard .dashChart {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-evenly;
+}
+
+.dashboard .chart {
+  width: 40%;
+  text-align: center;
+}
+
+.dashboard .chart h4 {
+  color: #555;
+  font-weight: normal;
+  font-size: 0.7rem;
+}
+
+/* Pendapatan, Pengeluaran, Karyawan, Hutang, Pengguna */
+
+.tambahPendapatan,
+.tambahPengeluaran,
+.tambahKaryawan,
+.tambahHutang,
+.tambahPengguna {
+  width: 100%;
+  height: 2.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tambahPendapatan .totPend,
+.tambahPengeluaran .totPengl,
+.tambahKaryawan .totKar,
+.tambahHutang .totHut,
+.tambahPengguna .totPengg {
+  min-width: 13rem;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  padding: 0.3rem 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-left: 3px solid #85e7d0;
+  border-top: 3px solid #85e7d0;
+}
+
+.tambahPendapatan .totPend h4,
+.tambahPendapatan .totPend p,
+.tambahPengeluaran .totPengl h4,
+.tambahPengeluaran .totPengl p,
+.tambahKaryawan .totKar h4,
+.tambahKaryawan .totKar p,
+.tambahHutang .totHut h4,
+.tambahHutang .totHut p,
+.tambahPengguna .totPengg h4,
+.tambahPengguna .totPengg p {
+  color: #555555;
+}
+
+.tambahPendapatan .totPend p,
+.tambahPengeluaran .totPengl p,
+.tambahKaryawan .totKar p,
+.tambahHutang .totHut p,
+.tambahPengguna .totPengg p {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.tambahPendapatan button,
+.tambahPengeluaran button,
+.tambahKaryawan button,
+.tambahHutang button,
+.tambahPengguna button {
+  width: 7rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #53cdb1;
+  color: white;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(48, 48, 48, 0.3);
+}
+
+.tambahPendapatan button:hover,
+.tambahPengeluaran button:hover,
+.tambahKaryawan button:hover,
+.tambahHutang button:hover,
+.tambahPengguna button:hover {
+  background-color: #34b597;
+}
+
+.tambahPendapatan button .icon,
+.tambahPengeluaran button .icon,
+.tambahKaryawan button .icon,
+.tambahHutang button .icon,
+.tambahPengguna button .icon {
+  margin-right: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.tblKonten {
+  margin-top: 1rem;
+}
+
+.table-controls {
+  width: 100%;
+  text-align: right;
+}
+
+.table-controls label {
+  color: #555555;
+}
+
+.table-controls input {
+  padding: 0 0.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid #555555;
+  font-size: 0.8rem;
+}
+
+.table-controls input:focus {
+  border: 2px solid #53cdb1;
+  outline: none;
+}
+
+.tbl {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-top: 1rem;
+  box-shadow: 0 0 5px rgba(48, 48, 48, 0.2);
+}
+
+.tbl thead {
+  background-color: #2e9ab2;
+}
+
+.tbl thead th {
+  color: white;
+  border: 1.5px solid rgb(226, 226, 226);
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.tbl thead th:hover {
+  background-color: #16788e;
+}
+
+.tbl .sorted {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0rem;
+  font-size: 0.7rem;
+}
+
+.tbl tbody tr:nth-child(odd):hover td {
+  background-color: #eeeeee;
+}
+
+.tbl tbody tr:nth-child(even) td {
+  background-color: #eeeeee;
+}
+
+.tbl tbody tr:nth-child(even):hover td {
+  background-color: #87ffe3;
+  color: white;
+}
+
+.tbl tbody tr td {
+  padding: 0.5rem 1rem;
+  border: 1.5px solid rgb(226, 226, 226);
+  color: #555555;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.tbl .aksi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.tbl td .edit,
+.tbl td .hapus {
+  width: 2rem;
+  margin: 0.3rem;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+}
+
+.tbl td .edit {
+  background-color: #2ca86e;
+}
+
+.tbl td .edit:hover {
+  background-color: #0e874f;
+}
+
+.tbl td .hapus {
+  background-color: #cd0a0a;
+}
+
+.tbl td .hapus:hover {
+  background-color: #960606;
+}
+
+.tblKonten .pgInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 0 0;
+  padding: 0 1rem;
+}
+
+.tblKonten .pgInfo span {
+  font-size: 0.8rem;
+  color: #555555;
+}
+
+.tblKonten .pgInfo .pagination button[disabled] {
+  width: 5rem;
+  margin: 0 0.3rem;
+  background-color: #d5d5d5;
+  border: none;
+  color: #555555;
+}
+
+.tblKonten .pgInfo .pagination button[disabled]:hover {
+  background-color: #d5d5d5;
+  color: #555555;
+  cursor: default;
+}
+
+.tblKonten .pgInfo .pagination button {
+  width: 5rem;
+  margin: 0 0.3rem;
+  background-color: #53cdb1;
+  border: none;
+  color: white;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tblKonten .pgInfo .pagination button:hover {
+  background-color: #2fa78b;
+}
+
+.tblImg {
+  width: 6rem;
+  height: 6rem;
+}

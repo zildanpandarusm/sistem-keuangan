@@ -1,0 +1,192 @@
+.modal {
+  width: 100%;
+  height: 100%;
+}
+
+.modal .overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  z-index: -999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  z-index: 100;
+}
+
+.modal.show .box {
+  width: 50%;
+  max-width: 23rem;
+  background-color: white;
+  animation: down;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  position: relative;
+  padding: 0.5rem 1.3rem;
+  border-radius: 1rem;
+  border-top: 3px solid #53cdb1;
+  border-bottom: 10px solid #53cdb1;
+}
+
+.modal.show .box .tandaX {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  color: #43bfa2;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid #53cdb1;
+}
+
+.modal.show .box .tandaX:hover {
+  color: #c3c3c3;
+  border: 3px solid #c3c3c3;
+}
+
+.modal.show .box h2 {
+  text-align: center;
+  color: #555555;
+  margin-top: 0.3rem;
+}
+
+.modal.show .box .formInput {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.6rem;
+}
+
+.modal.show .box .formInput label {
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.modal.show .box .formInput input,
+.modal.show .box .formInput #role {
+  height: 2rem;
+  padding-left: 0.5rem;
+  margin-top: 0.3rem;
+  color: #555555;
+  border-radius: 0.3rem;
+  outline: none;
+  border: 1px solid #c3c3c3;
+}
+
+.modal.show .box .formInput.file .editFile {
+  display: flex;
+  align-items: center;
+}
+
+.modal.show .box .formInput.file input {
+  border: none;
+  padding-left: 0;
+  width: 60%;
+  margin-right: 0.3rem;
+}
+
+.modal.show .box .formInput.file input:focus {
+  border: none;
+  outline: none;
+}
+.modal.show .box .formInput input:focus {
+  border: 2px solid #53cdb1;
+  outline: none;
+}
+
+.modal.show .box .formInput #role {
+  background-color: #ffffff;
+}
+
+.modal.show .box .formButton {
+  display: flex;
+  justify-content: center;
+}
+
+.modal.show .box .formButton button {
+  width: 30%;
+  height: 2rem;
+  margin: 1rem 0.5rem;
+}
+
+.modal.show .box .formButton button:nth-child(1) {
+  background-color: #53cdb1;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.modal.show .box .formButton button:nth-child(1):hover {
+  background-color: #37ad91;
+}
+
+.modal.show .box .formButton button:nth-child(2) {
+  background-color: #d71313;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.modal.show .box .formButton button:nth-child(2):hover {
+  background-color: #a40f0f;
+}
+
+/* Modal Hapus */
+.modal.show .box .yakin {
+  font-size: 1.2rem;
+}
+
+.modal.show .box .hapusButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.modal.show .box .hapusButton button {
+  margin: 0 1rem;
+  width: 30%;
+  border-radius: 0.5rem;
+  border: none;
+  height: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal.show .box .hapusButton button:nth-child(1) {
+  background-color: #d71313;
+  color: white;
+}
+
+.modal.show .box .hapusButton button:nth-child(1):hover {
+  background-color: #a40f0f;
+}
+
+.modal.show .box .hapusButton button:nth-child(2) {
+  color: #555555;
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
